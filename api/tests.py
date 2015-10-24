@@ -8,9 +8,7 @@ class ModelTeseCase(TestCase):
 	def setUp(self):
 		b = Brand.objects.create(title = "new blance")
 		b.save()
-
-		g = Good.objects.create(title = "999", price = 999.5, brand = b.generated_id)
-		g.save()
+		Good.objects.create(title = "999", price = 999.5, brand = b.generated_id).save()
 
 	def testAddModelData(self):
 		self.assertEqual(1, 1)

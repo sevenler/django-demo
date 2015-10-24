@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#coding=utf8
 #description     :This will create a header for a python script.
 #author          :songwei
 #email			 :songwei@ujipin.cn
@@ -8,7 +9,6 @@
 #创建model对象请使用 model.objects.create() 来创建。这个方法中会自动生成 generated_id
 #==============================================================================
 
-from demo.models import BaseModel
 from django.db import models
 import uuid
 
