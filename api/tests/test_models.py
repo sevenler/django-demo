@@ -7,7 +7,7 @@
 #==============================================================================
 
 from django.test import TestCase
-from api.models import Good, Brand
+from api.models.goods import Good, Brand
 
 # Create your tests here.
 
