@@ -7,10 +7,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0001_initial'),
     ]
 
     operations = [
+        migrations.CreateModel(
+            name='Brand',
+            fields=[
+                ('created_time', models.DateTimeField(auto_now_add=True)),
+                ('edited_time', models.DateTimeField(auto_now_add=True)),
+                ('id', models.AutoField(serialize=False, primary_key=True)),
+                ('title', models.CharField(max_length=200)),
+                ('icon', models.CharField(max_length=500)),
+                ('desc', models.CharField(max_length=1000)),
+            ],
+            options={
+                'abstract': False,
+            },
+        ),
+        migrations.CreateModel(
+            name='Good',
+            fields=[
+                ('created_time', models.DateTimeField(auto_now_add=True)),
+                ('edited_time', models.DateTimeField(auto_now_add=True)),
+                ('id', models.AutoField(serialize=False, primary_key=True)),
+                ('title', models.CharField(max_length=200)),
+                ('price', models.FloatField(default=0)),
+                ('brand', models.CharField(max_length=36)),
+                ('generated_id', models.CharField(max_length=36)),
+            ],
+            options={
+                'abstract': False,
+            },
+        ),
         migrations.CreateModel(
             name='OperationRecord',
             fields=[
@@ -23,7 +51,7 @@ class Migration(migrations.Migration):
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('before', models.IntegerField()),
                 ('after', models.IntegerField()),
-                ('description', models.CharField(max_length=1000)),
+                ('description', models.CharField(max_length=2000)),
             ],
             options={
                 'abstract': False,

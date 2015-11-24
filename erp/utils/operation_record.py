@@ -17,7 +17,7 @@
 #email			 :songwei@ujipin.cn
 #date            :20151024
 #==============================================================================
-from api.models.operation_record import OperationRecord as ormodel
+from erp.models.operation_record import OperationRecord as ormodel
 import datetime
 
 class OperationRecord():

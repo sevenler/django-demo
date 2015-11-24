@@ -6,7 +6,7 @@
 #date            :20151024
 #==============================================================================
 from django.db import models
-from api.utils.id_generator import Generator
+from erp.utils.id_generator import Generator
 
 from base_model import BaseModel,BaseModelManager
 

@@ -7,8 +7,8 @@
 #==============================================================================
 
 from django.test import TestCase
-from api.models.goods import Good, Brand
-from api.utils.operation_record import OperationRecord
+from erp.models.goods import Good, Brand
+from erp.utils.operation_record import OperationRecord
 import datetime
 
 # Create your tests here.
@@ -50,7 +50,7 @@ class ModelTeseCase(TestCase):
 				after = 1,
 				description = "采购单号 89777")
 
-		from api.models.operation_record import OperationRecord as ormodel
+		from erp.models.operation_record import OperationRecord as ormodel
 		print ormodel.objects.all()
 
 
