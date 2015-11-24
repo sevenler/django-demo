@@ -16,8 +16,8 @@ class ModelTeseCase(TestCase):
 	def setUp(self):
 		b = Brand.objects.create(title = "new blance")
 		b.save()
-		Good.objects.create(title = "999", price = 999.5, brand = b.generated_id).save()
-		Good.objects.create(title = "999", price = 100, brand = b.generated_id).save()
+		Good.objects.create(title = "999", price = 999.5, brand = b.id).save()
+		Good.objects.create(title = "999", price = 100, brand = b.id).save()
 
 	def testAddModelData(self):
 		self.assertEqual(1, 1)

@@ -13,23 +13,30 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Brand',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('created_time', models.DateTimeField(auto_now_add=True)),
+                ('edited_time', models.DateTimeField(auto_now_add=True)),
+                ('id', models.AutoField(serialize=False, primary_key=True)),
                 ('title', models.CharField(max_length=200)),
-                ('generated_id', models.CharField(max_length=36)),
                 ('icon', models.CharField(max_length=500)),
                 ('desc', models.CharField(max_length=1000)),
             ],
+            options={
+                'abstract': False,
+            },
         ),
         migrations.CreateModel(
             name='Good',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('created_time', models.DateTimeField(auto_now_add=True)),
                 ('edited_time', models.DateTimeField(auto_now_add=True)),
+                ('id', models.AutoField(serialize=False, primary_key=True)),
                 ('title', models.CharField(max_length=200)),
                 ('price', models.FloatField(default=0)),
                 ('brand', models.CharField(max_length=36)),
                 ('generated_id', models.CharField(max_length=36)),
             ],
+            options={
+                'abstract': False,
+            },
         ),
     ]
