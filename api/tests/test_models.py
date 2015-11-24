@@ -8,6 +8,8 @@
 
 from django.test import TestCase
 from api.models.goods import Good, Brand
+from api.utils.operation_record import OperationRecord
+import datetime
 
 # Create your tests here.
 
@@ -38,6 +40,18 @@ class ModelTeseCase(TestCase):
 		#在fitler结果列表中获取第一个结果
 		print Good.objects.filter(title = '999')[0]
 
+
+
+	def testOperationRecored(self):
+		record = OperationRecord.record(model = "采购单",
+				operation = "创建",
+				date = datetime.datetime.now(),
+				before = 0,
+				after = 1,
+				description = "采购单号 89777")
+
+		from api.models.operation_record import OperationRecord as ormodel
+		print ormodel.objects.all()
 
 
 

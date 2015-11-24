@@ -11,7 +11,6 @@ from api.utils.id_generator import Generator
 from base_model import BaseModel,BaseModelManager
 
 class GoodManager(BaseModelManager):
-
 	def create(self, **kwargs):
 		return self.model(generated_id = Generator.genarateId(), **kwargs)
 	
@@ -29,7 +28,6 @@ class Good(BaseModel):
 
 class BrandManager(BaseModelManager):
 	pass
-
 class Brand(BaseModel):
 	title = models.CharField(max_length=200)
 	icon = models.CharField(max_length=500)

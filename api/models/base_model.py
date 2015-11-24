@@ -8,19 +8,20 @@
 
 from django.db import models
 
+class BaseModelManager(models.Manager):
+	def create(self, **kwargs):
+		return self.model(**kwargs)
+
 class BaseModel(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
     edited_time = models.DateTimeField(auto_now_add=True)
     id = models.AutoField(primary_key=True)
 
+    objects = BaseModelManager()
+
     def __unicode__(self):
-		return "good://" + str(self.id)
+        name = self.__class__.__name__
+        return name + "://" + str(self.id)
 
     class Meta:
         abstract=True # Set this model as Abstract
-
-
-class BaseModelManager(models.Manager):
-
-	def create(self, **kwargs):
-		return self.model(**kwargs)
